@@ -1,28 +1,39 @@
 import eslintJs from '@eslint/js';
-import eslintPluginAstro from 'eslint-plugin-astro';
-import * as eslintPluginImport from 'eslint-plugin-import';
+import eslintConfigPrettier from 'eslint-config-prettier';
+// import { configs as astroConfigs } from 'eslint-plugin-astro';
+import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginNoUseExtendNative from 'eslint-plugin-no-use-extend-native';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
+// import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginPromise from 'eslint-plugin-promise';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import { configs as tseslintConfigs } from 'typescript-eslint';
 
 import airbnbBase from './airbnb-base.js';
+
+const airbnb = airbnbBase
+  .filter((x) => !x.name.includes('import'))
+  .concat({
+    name: 'airbnb/plugin-import-rules',
+    rules: airbnbBase.find((x) => x.name.includes('import')).rules,
+  });
 
 export default [
   eslintJs.configs.recommended,
   eslintPluginNoUseExtendNative.configs.recommended,
   eslintPluginUnicorn.configs.recommended,
-  eslintPluginImport.flatConfigs?.recommended,
-  eslintPluginImport.flatConfigs?.errors,
-  eslintPluginImport.flatConfigs?.warnings,
-  eslintPluginImport.flatConfigs?.react,
-  eslintPluginImport.flatConfigs?.typescript,
+  eslintPluginImport.flatConfigs.recommended,
+  eslintPluginImport.flatConfigs.errors,
+  eslintPluginImport.flatConfigs.warnings,
+  eslintPluginImport.flatConfigs.react,
+  eslintPluginImport.flatConfigs.typescript,
   eslintPluginPromise.configs['flat/recommended'],
-  tseslint.configs.eslintRecommended,
+  tseslintConfigs.eslintRecommended,
 
-  ...airbnbBase,
+  // TODO: bruh.. buggy
+  // astroConfigs['flat/recommended'],
+
+  ...airbnb,
 
   {
     name: 'wgw/plugin-import-overrides',
@@ -157,7 +168,7 @@ export default [
       // You still can disable that and do whatever you want,
       // but that will be explicit and visible.
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md
-      'unicorn/no-unsafe-regex': 'error',
+      // 'unicorn/no-unsafe-regex': 'error',
 
       // Enforce importing index files with `.` instead of `./index`. (fixable)
       // But we should be explicit. We know it is working without that,
@@ -184,23 +195,27 @@ export default [
   },
   {
     name: 'wgw/misc',
-    files: [
-      '**/eslint.config.ts',
-      '**/*.ts',
-      '**/*.tsx',
-      '**/*.js',
-      '**/*.jsx',
-      '**/*.mjs',
-      '**/*.cjs',
-    ],
-    env: {
-      node: true,
-      browser: true,
-      astro: true,
-      mocha: true,
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'],
+    settings: {
+      'import/resolver': {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        typescript: {
+          alwaysTryTypes: true,
+          project: 'packages/*/{ts,js}config.json',
+          bun: true,
+          node: true,
+        },
+      },
     },
     languageOptions: {
-      globals: globals.builtin,
+      globals: {
+        ...globals.builtin,
+        ...globals.browser,
+        ...globals.node,
+        ...globals.nodeBuiltin,
+        ...globals['shared-node-browser'],
+      },
       ecmaVersion: 'latest',
       sourceType: 'module',
       // parser: typescriptParser,
@@ -219,7 +234,7 @@ export default [
       '@typescript-eslint/triple-slash-reference': 'off',
       '@typescript-eslint/no-unused-vars': 'off', // fvck off, we have properly configured `no-unused-vars`
       '@typescript-eslint/no-explicit-any': 'off',
-
+      'no-restricted-exports': 'off',
       'sort-keys': 'off',
       camelcase: 'off',
       // !NOTE: eslint-plugin-node is unmaintained and not used in April 2025
@@ -244,23 +259,7 @@ export default [
       ],
     },
   },
-  {
-    name: 'astro-files-override',
-    files: ['**/*.astro'],
-    plugins: {
-      astro: eslintPluginAstro,
-    },
-    extends: ['astro/recommended'],
-  },
-  {
-    extends: ['prettier'],
-    plugins: {
-      prettier: eslintPluginPrettier,
-    },
-    rules: {
-      'prettier/prettier': 'error',
-      'arrow-body-style': 'off',
-      'prefer-arrow-callback': 'off',
-    },
-  },
+
+  eslintConfigPrettier,
+  // eslintPluginPrettier.configs.recommended,
 ];

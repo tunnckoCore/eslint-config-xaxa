@@ -1,3 +1,1 @@
-import xaxaConfig from './xaxa-config.js';
-
-export default xaxaConfig;
+export { default } from './xaxa-config.js';
