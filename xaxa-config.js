@@ -245,7 +245,118 @@ export default [
       // "no-param-reassign": "off",
       // 'no-explicit-any': 'warn',
 
-      'no-restricted-syntax': 'off',
+      // https://eslint.org/docs/rules/function-call-argument-newline
+      'no-import-assign': 'error',
+
+      // https://eslint.org/docs/rules/function-call-argument-newline
+      'function-call-argument-newline': ['error', 'consistent'],
+
+      // Prefer Object.hasOwn() over Object.prototype.hasOwnProperty.call()
+      // https://eslint.org/docs/rules/prefer-object-has-own
+      'prefer-object-has-own': 'error',
+
+      // Off in Airbnb, until `eslint v7.15 is required`
+      // disallow use of optional chaining in contexts where the undefined value is not allowed
+      // https://eslint.org/docs/rules/no-unsafe-optional-chaining
+      'no-unsafe-optional-chaining': ['error', { disallowArithmeticOperators: true }],
+
+      // https://eslint.org/docs/rules/default-param-last
+      'default-param-last': 'error',
+
+      'prefer-regex-literals': 'error',
+      'no-empty': ['error', { allowEmptyCatch: true }],
+      'no-extend-native': 'error',
+      'no-use-extend-native/no-use-extend-native': 'error',
+
+      // yes, we know that it's just a convention, allow me Airbnb.
+      'no-underscore-dangle': 'off',
+
+      // why?
+      'no-continue': 'warn',
+      'no-console': 'off',
+
+      // we use es modules
+      strict: ['off', 'global'],
+
+      // we use spaces
+      'no-tabs': 'error',
+
+      // Enforce using named functions when regular function is used,
+      // otherwise use arrow functions
+      'func-names': ['error', 'always'],
+      // Always use parens (for consistency).
+      // https://eslint.org/docs/rules/arrow-parens
+      'arrow-parens': ['error', 'always', { requireForBlockBody: true }],
+      'prefer-arrow-callback': ['error', { allowNamedFunctions: true, allowUnboundThis: true }],
+      // http://eslint.org/docs/rules/max-params
+      'max-params': ['error', { max: 6 }],
+      // http://eslint.org/docs/rules/max-statements
+      'max-statements': ['error', 40, { ignoreTopLevelFunctions: true }],
+      // http://eslint.org/docs/rules/max-statements-per-line
+      'max-statements-per-line': ['error', { max: 1 }],
+      // http://eslint.org/docs/rules/max-nested-callbacks
+      'max-nested-callbacks': ['error', { max: 4 }],
+      // http://eslint.org/docs/rules/max-depth
+      'max-depth': ['error', { max: 4 }],
+      // enforces no braces where they can be omitted
+      // https://eslint.org/docs/rules/arrow-body-style
+      // Never enable for object literal.
+      'arrow-body-style': ['error', 'as-needed', { requireReturnForObjectLiteral: false }],
+      // Allow functions to be use before define because:
+      // 1) they are hoisted,
+      // 2) because ensure read flow is from top to bottom
+      // 3) logically order of the code.
+      // 4) the only addition is 'typedefs' option, see overrides for TS files
+      'no-use-before-define': [
+        'error',
+        {
+          functions: false,
+          classes: true,
+          variables: true,
+          allowNamedExports: true,
+        },
+      ],
+
+      // disallow declaration of variables that are not used in the code
+      'no-unused-vars': [
+        'error',
+        {
+          ignoreRestSiblings: true, // airbnb's default
+          vars: 'all', // airbnb's default
+          // caughtErrorsIgnorePattern: '^(?:$$|xx|_|__|[iI]gnor(?:e|ing|ed))',
+          varsIgnorePattern: '^(?:$$|xx|_|__|[iI]gnor(?:e|ing|ed))',
+          args: 'after-used', // airbnb's default
+          argsIgnorePattern: '^(?:$$|xx|_|__|[iI]gnor(?:e|ing|ed))',
+
+          // catch blocks are handled by Unicorns
+          caughtErrors: 'none',
+          // caughtErrorsIgnorePattern: '^(?:$$|xx|_|__|[iI]gnor(?:e|ing|ed))',
+        },
+      ],
+
+      // Default as Airbnb's except we allow for of & for await of
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ForInStatement',
+          message:
+            'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+        },
+        // {
+        //   selector: 'ForOfStatement',
+        //   message: 'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
+        // },
+        {
+          selector: 'LabeledStatement',
+          message:
+            'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+        },
+        {
+          selector: 'WithStatement',
+          message:
+            '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        },
+      ],
       // bruh
       'prefer-destructuring': 'off',
       'lines-between-class-members': [
