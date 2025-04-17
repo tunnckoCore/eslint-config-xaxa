@@ -13,9 +13,10 @@ import airbnbBase from './airbnb-base.js';
 
 const airbnb = airbnbBase
   .filter((x) => !x.name.includes('import'))
+  // @ts-ignore
   .concat({
     name: 'airbnb/plugin-import-rules',
-    rules: airbnbBase.find((x) => x.name.includes('import')).rules,
+    rules: airbnbBase?.find((x) => x.name.includes('import'))?.rules || {},
   });
 
 export default [
