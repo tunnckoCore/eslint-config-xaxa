@@ -42,28 +42,38 @@ bun add -D eslint-config-xaxa
 
 ## Usage
 
-For ESLint prior to v9 you can use `eslint-config-tunnckocore` which is basically what i used in the
-past few years, otherwise for v9+ and above, use the flat config:
+For **ESLint prior to v9** you can use `eslint-config-tunnckocore` which is basically what i used in
+the past few years!
 
 ```js
+// .eslintrc.cjs
+module.exports = { extends: ['tunnckocore'] };
+```
+
+For **ESLint v9+ and above** use the flat config:
+
+```js
+// eslint.config.js
 import eslintConfigXaxa from 'eslint-config-xaxa';
 
 export default eslintConfigXaxa;
 ```
 
-For Prettier make sure your `prettier.config.js` is in ES Modules format, and you should have
+For **Prettier** make sure your `prettier.config.js` is in ES Modules format, and you should have
 `"type": "module"` in your package.json.
 
 ```js
+// prettier.config.js
 import prettierConfigXaxa from 'eslint-config-xaxa/prettier';
 
 export default prettierConfigXaxa;
 ```
 
-If you want to use just the Airbnb Base Config which just includes their style and few rules from
-the import plugin:
+If you want to use just the **Airbnb Base Config** which just includes their style and few rules
+from the import plugin:
 
 ```js
+// eslint.config.js
 import airbnbConfig from 'eslint-config-xaxa/airbnb-base';
 
 export default airbnbConfig;
