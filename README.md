@@ -1,4 +1,11 @@
-# eslint-config-xaxa
+# eslint-config-xaxa [![npm version][npmv-img]][npmv-url] [![cicd build][linuxbuild-img]][linuxbuild-url] [![Libera Manifesto][libera-manifesto-img]][libera-manifesto-url]
+
+[npmv-url]: https://npmjs.com/packages/eslint-config-xaxa
+[npmv-img]: https://badgen.net/npm/v/eslint-config-xaxa?icon=npm
+[linuxbuild-url]: https://github.com/tunnckocore/eslint-config-xaxa/actions
+[linuxbuild-img]: https://badgen.net/github/checks/tunnckoCore/eslint-config-xaxa/master?icon=github
+[libera-manifesto-url]: https://liberamanifesto.com
+[libera-manifesto-img]: https://badgen.net/badge/libera/manifesto/grey
 
 Modern, ESLint v9+ compatible, config based on Airbnb with support for Astro, Prettier, Plugin
 Promise, Plugin Unicorn, Plugin Import, React and Typescript.
