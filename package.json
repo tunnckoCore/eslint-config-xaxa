@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xaxa",
-  "version": "25.0.7",
+  "version": "25.0.8",
   "license": "MIT",
   "description": "Modern, ESLint v9+ compatible, Airbnb-based shareable config; including plugins like Import, Prettier, Unicorn, Typescript, Astro, and React.",
   "author": "tunnckocore",
