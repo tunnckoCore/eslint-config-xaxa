@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xaxa",
-  "version": "25.0.8",
+  "version": "25.0.9",
   "license": "MIT",
   "description": "Modern, ESLint v9+ compatible, Airbnb-based shareable config; including plugins like Import, Prettier, Unicorn, Typescript, Astro, and React.",
   "author": "tunnckocore",
@@ -14,8 +14,8 @@
     "./airbnb-configs": "./airbnb-configs.js",
     "./airbnb-base": "./airbnb-base.js",
     "./prettier": "./prettier-config.js",
-    "./tsconfig": "./tsconfig.json",
-    "./tsconfig.json": "./tsconfig.json"
+    "./tsconfig": "./typescript.json",
+    "./tsconfig.json": "./typescript.json"
   },
   "files": [
     "index.js",

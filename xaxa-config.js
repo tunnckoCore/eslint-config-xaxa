@@ -3,23 +3,24 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 // import { configs as astroConfigs } from 'eslint-plugin-astro';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginNoUseExtendNative from 'eslint-plugin-no-use-extend-native';
-  // import eslintPluginPrettier from 'eslint-plugin-prettier';
-  import eslintPluginPromise from 'eslint-plugin-promise';
+// import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginPromise from 'eslint-plugin-promise';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import { configs as tseslintConfigs, parser as typescriptParser } from 'typescript-eslint';
 
-  import airbnbBase from './airbnb-base.js';
+import airbnbBase from './airbnb-base.js';
 
-  const airbnb = airbnbBase
-    .filter((x) => !x.name.includes('import'))
-    // @ts-ignore
-    .concat({
+const airbnb = airbnbBase
+  .filter((x) => !x.name.includes('import'))
+  // @ts-ignore
+  .concat({
     name: 'airbnb/plugin-import-rules',
     rules: airbnbBase?.find((x) => x.name.includes('import'))?.rules || {},
   });
 
 export default [
+  { ignores: ['**/node_modules/**', '**/dist/**'] },
   eslintJs.configs.recommended,
   eslintPluginNoUseExtendNative.configs.recommended,
   eslintPluginUnicorn.configs.recommended,
@@ -222,8 +223,10 @@ export default [
       parser: typescriptParser,
       parserOptions: {
         ecmaVersion: 'latest',
-        project: ['tsconfig.json','packages/**/tsconfig.json'],
-        projectService: true,
+        project: ['tsconfig.json', 'packages/**/tsconfig.json'],
+        projectService: {
+          allowDefaultProject: ['*.js', '*.mjs', '*.ts', '.jsx', '*.tsx'],
+        },
         lib: ['ESNext'],
         ecmaFeatures: {
           jsx: true,
