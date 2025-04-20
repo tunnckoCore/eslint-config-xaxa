@@ -224,9 +224,10 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         project: ['tsconfig.json', 'packages/**/tsconfig.json'],
-        projectService: {
-          allowDefaultProject: ['*.js', '*.mjs', '*.ts', '.jsx', '*.tsx'],
-        },
+        projectService: true,
+        // projectService: {
+        //   allowDefaultProject: ['*.js', '*.mjs', '*.ts', '.jsx', '*.tsx'],
+        // },
         lib: ['ESNext'],
         ecmaFeatures: {
           jsx: true,
