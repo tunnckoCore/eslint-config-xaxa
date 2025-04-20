@@ -236,6 +236,11 @@ export default [
       },
     },
     rules: {
+      'no-plusplus': 'off',
+      'consistent-return': 'off',
+      'class-methods-use-this': 'off',
+      'no-await-in-loop': 'off',
+      'max-classes-per-file': 'off',
       '@typescript-eslint/triple-slash-reference': 'off',
       '@typescript-eslint/no-unused-vars': 'off', // fvck off, we have properly configured `no-unused-vars`
       '@typescript-eslint/no-explicit-any': 'off',
