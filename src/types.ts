@@ -43,7 +43,7 @@ export interface OptionsUnoCSS {
 
 export interface OptionsXaxa {
   /**
-     * Enable detection to disable auto-fixes of 3 rules, for developer experience.
+   * Enable detection to disable auto-fixes of 3 rules, for developer experience.
    * @default true
    */
   isInEditor?: boolean;
@@ -55,12 +55,6 @@ export interface OptionsXaxa {
 
   /**
    * Enable ASTRO support.
-   *
-   * Requires installing:
-   * - `eslint-plugin-astro`
-   *
-   * Requires installing for formatting .astro:
-   * - `prettier-plugin-astro`
    *
    * @default false
    */

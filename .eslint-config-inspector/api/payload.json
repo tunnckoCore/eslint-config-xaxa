@@ -20295,6 +20295,33 @@
       ]
     },
     {
+      "filepath": ".github/renovate.json",
+      "globs": [
+        "**/*.json"
+      ],
+      "configs": [
+        42
+      ]
+    },
+    {
+      "filepath": ".github/workflows/ci.yml",
+      "globs": [
+        "**/*.y?(a)ml"
+      ],
+      "configs": [
+        46
+      ]
+    },
+    {
+      "filepath": ".github/workflows/release.yml",
+      "globs": [
+        "**/*.y?(a)ml"
+      ],
+      "configs": [
+        46
+      ]
+    },
+    {
       "filepath": ".vscode/settings.json",
       "globs": [
         "**/*.json"
@@ -20638,25 +20665,10 @@
         33,
         58
       ]
-    },
-    {
-      "filepath": "xtsdown.config.ts",
-      "globs": [
-        "**/*.?([cm])[jt]s?(x)",
-        "**/*.?([cm])ts",
-        "**/*.config.?([cm])[jt]s?(x)"
-      ],
-      "configs": [
-        8,
-        30,
-        31,
-        33,
-        58
-      ]
     }
   ],
   "meta": {
-    "lastUpdate": 1746661910151,
+    "lastUpdate": 1746664745493,
     "basePath": "",
     "configPath": ""
   }

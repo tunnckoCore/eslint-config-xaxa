@@ -223,12 +223,6 @@ export interface OptionsXaxa {
   /**
    * Enable ASTRO support.
    *
-   * Requires installing:
-   * - `eslint-plugin-astro`
-   *
-   * Requires installing for formatting .astro:
-   * - `prettier-plugin-astro`
-   *
    * @default false
    */
   astro?: boolean | TypedFlatConfigItem['rules'];
