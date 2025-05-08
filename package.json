@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-xaxa",
   "type": "module",
-  "version": "26.0.0-next.7",
+  "version": "26.0.0-next.8",
   "description": "The ultimate ESLint config - successor to Airbnb Config. Written in and published as TypeScript. Built on Anthony Fu's ESLint config, Airbnb, ESLint Stylistic, Perfectionist, React, TypeScript, Astro, JSDocs, Prettier, Node.js, Unicorns, Promises, and more.",
   "author": "tunnckoCore",
   "license": "MIT",

@@ -4,6 +4,16 @@
 > Airbnb, UnoCSS, Tailwind, JSX, ESLint Stylistic, Perfectionist, React, TypeScript, Astro,
 > ~~JSDocs~~ (soon), Prettier\*, Node.js, Unicorns, Promises, and more.
 
+<!-- prettier-ignore-start -->
+
+[![][npm-version-src]][npm-version-href]
+[![][github-actions-src]][github-actions-href]
+[![][npm-downloads-src]][npm-downloads-href]
+[![][codestyle-src]][codestyle-href]
+[![][license-src]][license-href]
+
+<!-- prettier-ignore-end -->
+
 ## Motivation
 
 First things first. It uses and sits (inherits) on top of `@antfu/eslint-config` as core (thus you
@@ -392,3 +402,26 @@ export interface OptionsXaxa {
   cwd?: string;
 }
 ```
+
+## License
+
+Licensed under the [MIT License](https://opensource.org/licenses/MIT)
+
+<!-- prettier-ignore-start -->
+
+[npm-version-src]: https://img.shields.io/npm/v/eslint-config-xaxa/next?style=flat&logo=npm
+[npm-version-href]: https://npmjs.com/package/eslint-config-xaxa
+[npm-downloads-src]: https://img.shields.io/npm/dm/eslint-config-xaxa?style=flat&logo=npm
+[npm-downloads-href]: https://npmjs.com/package/eslint-config-xaxa
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/tunnckoCore/eslint-config-xaxa/ci.yml?style=flat&logo=github
+[github-actions-href]: https://github.com/tunnckocore/eslint-config-xaxa/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/gh/tunnckocore/eslint-config-xaxa/master?style=flat&logo=codecov
+[codecov-href]: https://codecov.io/gh/tunnckocore/eslint-config-xaxa
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/eslint-config-xaxa?style=flat
+[bundle-href]: https://bundlephobia.com/result?p=eslint-config-xaxa
+[license-src]: https://img.shields.io/npm/l/eslint-config-xaxa?style=flat&colorB=blue
+[license-href]: https://github.com/tunnckocore/eslint-config-xaxa/blob/master/LICENSE
+[codestyle-src]: https://badgen.net/badge/code%20style/xaxa/5654a4?icon=airbnb
+[codestyle-href]: https://github.com/tunnckoCore/eslint-config-xaxa
+
+<!-- prettier-ignore-end -->
