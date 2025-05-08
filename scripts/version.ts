@@ -21,7 +21,7 @@ function getArg(arg: string, defaultValue?: string | boolean) {
 }
 
 const debug = getArg('debug', false);
-const from = getArg('from', 'HEAD~2');
+const from = getArg('from', 'HEAD~4');
 const to = getArg('to', 'HEAD');
 // const raw = getArg('raw', true);
 // const publish = getArg('publish', false);
