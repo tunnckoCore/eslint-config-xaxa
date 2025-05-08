@@ -20,30 +20,37 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Determine New Version
-        id: version # Assign an ID to this step
-        run: |
-          WGW_NEXT_VERSION=$(bun run wgw-version)
-          echo "WGW_NEXT_VERSION=${WGW_NEXT_VERSION}" >> $GITHUB_ENV
-          echo "::set-output name=wgw_next_version::$WGW_NEXT_VERSION"
-
-      - name: Update package.json
-        if: steps.version.outputs.wgw_next_version != ''
-        run: |
-          jq ".version = \"$WGW_NEXT_VERSION\"" package.json > package.tmp.json && mv package.tmp.json package.json
-
-      - name: Create and Push a Git Tag
-        if: steps.version.outputs.wgw_next_version != ''
+      - name: Semantic Release from Bun
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git tag "v${{ env.WGW_NEXT_VERSION }}"
-          git push origin "v${{ env.WGW_NEXT_VERSION }}"
-
-      - name: Bun Publish with Provenance
-        if: steps.version.outputs.wgw_next_version != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          WGW_NEXT_VERSION: ${{ env.WGW_NEXT_VERSION }}
-        run: bun run wgw-publish --next-version $WGW_NEXT_VERSION
+        run: bunx semantic-release@24
+
+      # - name: Determine New Version
+      #   id: version # Assign an ID to this step
+      #   run: |
+      #     WGW_NEXT_VERSION=$(bun run wgw-version ${{ github.event.workflow_run.head_commit.message }})
+      #     echo "WGW_NEXT_VERSION=${WGW_NEXT_VERSION}" >> $GITHUB_ENV
+      #     echo "::set-output name=wgw_next_version::$WGW_NEXT_VERSION"
+
+      # - name: Update package.json
+      #   if: steps.version.outputs.wgw_next_version != ''
+      #   run: |
+      #     jq ".version = \"$WGW_NEXT_VERSION\"" package.json > package.tmp.json && mv package.tmp.json package.json
+
+      # - name: Create and Push a Git Tag
+      #   if: steps.version.outputs.wgw_next_version != ''
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     git tag "v${{ env.WGW_NEXT_VERSION }}"
+      #     git push origin "v${{ env.WGW_NEXT_VERSION }}"
+
+      # - name: Bun Publish with Provenance
+      #   if: steps.version.outputs.wgw_next_version != ''
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #     WGW_NEXT_VERSION: ${{ env.WGW_NEXT_VERSION }}
+      #   run: bun run wgw-publish --next-version $WGW_NEXT_VERSION
