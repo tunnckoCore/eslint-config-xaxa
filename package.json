@@ -58,7 +58,7 @@
     "dev": "bunx @eslint/config-inspector",
     "build": "bunx esmc --no-cjs && bunx @eslint/config-inspector build",
     "lint": "eslint --fix --cache --config ./eslint.config.ts ./src/**/*.ts",
-    "prepublishOnly": "bun run build",
+    "prepublishOnly": "bunx prettier README.md --write && bun run build",
     "test:ci": "bun run build && bun run lint"
   },
   "peerDependencies": {
