@@ -29,7 +29,7 @@ It's smart. It's jam-packed. It's the ultimate ESLint config. Built over many ye
 and many projects. The config's core, around Airbnb, was used in all my 300+ packages with several
 tweaks over the years. The config is well tested and battle-proven.
 
-> ![NOTE]
+> [!NOTE]
 >
 > As of 2025, since `eslint-config-airbnb` is in pretty bad state, i migrated it entirely to ESLint
 > v9 and the new flat-config system. Turns out, most of Airbnb rules are now A) in
