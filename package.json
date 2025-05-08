@@ -43,6 +43,7 @@
     "compat-prettier-config.js",
     "compat-typescript.json",
     "dist",
+    "logo.png",
     "src"
   ],
   "engines": {

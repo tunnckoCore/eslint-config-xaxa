@@ -4,13 +4,38 @@
 > Airbnb, UnoCSS, Tailwind, JSX, ESLint Stylistic, Perfectionist, React, TypeScript, Astro,
 > ~~JSDocs~~ (soon), Prettier\*, Node.js, Unicorns, Promises, and more.
 
+<p align="center">
+  <a href="https://github.com/olstenlarck/xaxa">
+    <img src="./logo.png">
+  </a>
+</p>
+<br>
+
 <!-- prettier-ignore-start -->
 
-[![][npm-version-src]][npm-version-href]
+<p align="center">
+  <a href="https://npmjs.com/package/eslint-config-xaxa">
+    <img src="https://img.shields.io/npm/v/eslint-config-xaxa/next?style=flat&logo=npm" alt="npm version">
+  </a>
+  <a href="https://github.com/tunnckocore/eslint-config-xaxa/actions?query=workflow%3Aci">
+    <img src="https://img.shields.io/github/actions/workflow/status/tunnckoCore/eslint-config-xaxa/ci.yml?style=flat&logo=github" alt="github actions">
+  </a>
+  <a href="https://npmjs.com/package/eslint-config-xaxa">
+    <img src="https://img.shields.io/npm/dm/eslint-config-xaxa?style=flat&logo=npm" alt="npm downloads">
+  </a>
+  <a href="https://github.com/tunnckoCore/eslint-config-xaxa">
+    <img src="https://badgen.net/badge/code%20style/xaxa/5654a4?icon=airbnb" alt="code style">
+  </a>
+  <a href="https://github.com/tunnckocore/eslint-config-xaxa/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/eslint-config-xaxa?style=flat&colorB=blue" alt="license">
+  </a>
+</p>
+
+<!-- [![][npm-version-src]][npm-version-href]
 [![][github-actions-src]][github-actions-href]
 [![][npm-downloads-src]][npm-downloads-href]
 [![][codestyle-src]][codestyle-href]
-[![][license-src]][license-href]
+[![][license-src]][license-href] -->
 
 <!-- prettier-ignore-end -->
 
