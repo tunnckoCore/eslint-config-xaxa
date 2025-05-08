@@ -2,7 +2,7 @@ name: Release
 on:
   workflow_run:
     workflows:
-      - Main Workflow # Name of the source workflow
+      - ci # Name of the source workflow
     types:
       - completed
 
