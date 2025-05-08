@@ -1,4 +1,4 @@
-name: Release
+name: release
 on:
   workflow_run:
     workflows:
@@ -6,37 +6,47 @@ on:
     types:
       - completed
 
-permissions:
-  contents: read # for checkout
-
 jobs:
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
+  test:
+    name: Release through Bun
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
     steps:
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
         with:
-          node-version: lts/*
-          cache: npm
-          cache-dependency-path: 'package-lock.json'
+          bun-version: 'latest'
+
       - name: Install dependencies
-        run: npm install
-      - name:
-          Verify the integrity of provenance attestations and registry signatures for installed
-          dependencies
-        run: npm audit signatures
-      - name: Semantic Release
+        run: bun install
+
+      - name: Determine New Version
+        id: version # Assign an ID to this step
+        run: |
+          WGW_NEXT_VERSION=$(bun run wgw-version)
+          echo "WGW_NEXT_VERSION=${WGW_NEXT_VERSION}" >> $GITHUB_ENV
+          echo "::set-output name=wgw_next_version::$WGW_NEXT_VERSION"
+
+      - name: Update package.json
+        if: steps.version.outputs.wgw_next_version != ''
+        run: |
+          jq ".version = \"$WGW_NEXT_VERSION\"" package.json > package.tmp.json && mv package.tmp.json package.json
+
+      - name: Create and Push a Git Tag
+        if: steps.version.outputs.wgw_next_version != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git tag "v${{ env.WGW_NEXT_VERSION }}"
+          git push origin "v${{ env.WGW_NEXT_VERSION }}"
+
+      - name: Bun Publish with Provenance
+        if: steps.version.outputs.wgw_next_version != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        # pinning by Renovate
-        run: npx semantic-release@24.2.3
+          WGW_NEXT_VERSION: ${{ env.WGW_NEXT_VERSION }}
+        run: bun run wgw-publish --next-version $WGW_NEXT_VERSION

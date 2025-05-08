@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-xaxa",
   "type": "module",
-  "version": "26.0.0",
+  "version": "27.0.0",
   "description": "The ultimate ESLint config - successor to Airbnb Config. Built on Anthony Fu's ESLint config, Airbnb, ESLint Stylistic, Perfectionist, React, TypeScript, Astro, JSDocs, Prettier, Node.js, Unicorns, Promises, and more.",
   "author": "tunnckoCore",
   "license": "MIT",
@@ -71,7 +71,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": false,
+    "provenance": true,
     "registry": "https://registry.npmjs.org/",
     "tag": "latest"
   },
@@ -80,7 +80,9 @@
     "build": "bunx esmc --no-cjs && bunx @eslint/config-inspector build",
     "lint": "eslint --fix --cache --config ./eslint.config.ts ./src/**/*.ts",
     "prepublishOnly": "bunx prettier README.md --write && bun run build",
-    "test:ci": "bun run build && bun run lint"
+    "test:ci": "bun run build && bun run lint",
+    "wgw-version": "bun ./scripts/version.ts",
+    "wgw-publish": "bun ./scripts/publish.ts"
   },
   "peerDependencies": {
     "eslint": "9.26.0",
@@ -120,11 +122,17 @@
   "devDependencies": {
     "@unocss/preset-wind4": "66.1.0",
     "astro": "5.7.11",
+    "collect-mentions": "^2.0.1",
     "eslint": "9.26.0",
+    "git-raw-commits": "^5.0.0",
     "jiti": "2.4.2",
+    "libnpmpack": "^9.0.2",
+    "libnpmpublish": "^11.0.0",
+    "mentions-regex": "^2.0.3",
     "prettier": "3.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "recommended-bump": "^3.0.1",
     "tsdown": "0.10.2",
     "typescript": "^5.8.3",
     "unocss": "66.1.0"
