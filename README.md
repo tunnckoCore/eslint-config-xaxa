@@ -16,6 +16,7 @@ React/Preact and TypeScript are auto-detected too. If you have `react` in your d
 It's smart. It's jam-packed. It's the ultimate ESLint config. Built over many years of experience and many projects. The config's core, around Airbnb, was used in all my 300+ packages with several tweaks over the years. The config is well tested and battle-proven.
 
 > ![NOTE]
+>
 > As of 2025, since `eslint-config-airbnb` is in pretty bad state, i migrated it entirely to ESLint v9 and the new flat-config system. Turns out, most of Airbnb rules are now A) in [ESLint Stylistic](https://eslint.style) (an initiative to move out most of the styling rules out of ESLint Core), and B) in modern `eslint-plugin-import-x` () and `eslint-plugin-n` (node). You should keep in mind that i _did not_ migrated Airbnb's React config. But I included a lot more modern stuff that handles everything well-enough.
 
 Currently, the focus is to avoid the use of Prettier as much as possible. You can read more on [Anthony's blog](https://antfu.me/posts/why-not-prettier). The config is built to be used with ESLint's built-in formatter and Language API which allows to lint any language, not just JS/TS. There is an option `formatters` that can set to enable any of the supported formatters - that's done by `@antfu/eslint-config` and `eslint-plugin-format`.
@@ -43,13 +44,7 @@ import presetWind4 from '@unocss/preset-wind4';
 import { defineConfig } from 'unocss';
 
 export default defineConfig({
-  presets: [
-    presetWind4({
-      preflights: {
-        reset: true,
-      }
-    }),
-  ],
+  presets: [presetWind4({ preflights: { reset: true, } }),],
 });
 ```
 

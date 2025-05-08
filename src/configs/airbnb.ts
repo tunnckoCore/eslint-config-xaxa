@@ -3,7 +3,7 @@
 
 import type { Linter } from 'eslint';
 
-import { GLOB_SRC, type TypedFlatConfigItem, typescript } from '@antfu/eslint-config';
+import { GLOB_SRC, type TypedFlatConfigItem } from '@antfu/eslint-config';
 import confusingBrowserGlobals from 'confusing-browser-globals';
 import globals from 'globals';
 
