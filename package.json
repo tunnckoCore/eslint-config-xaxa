@@ -1,14 +1,34 @@
 {
   "name": "eslint-config-xaxa",
   "type": "module",
-  "version": "26.0.0-next.8",
-  "description": "The ultimate ESLint config - successor to Airbnb Config. Written in and published as TypeScript. Built on Anthony Fu's ESLint config, Airbnb, ESLint Stylistic, Perfectionist, React, TypeScript, Astro, JSDocs, Prettier, Node.js, Unicorns, Promises, and more.",
+  "version": "26.0.0",
+  "description": "The ultimate ESLint config - successor to Airbnb Config. Built on Anthony Fu's ESLint config, Airbnb, ESLint Stylistic, Perfectionist, React, TypeScript, Astro, JSDocs, Prettier, Node.js, Unicorns, Promises, and more.",
   "author": "tunnckoCore",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tunnckoCore/eslint-config-xaxa.git"
   },
+  "keywords": [
+    "airbnb",
+    "eslint",
+    "eslint-config",
+    "eslint-plugin",
+    "react",
+    "react-dom",
+    "antfu",
+    "typescript",
+    "markdown",
+    "astro",
+    "prettier",
+    "unicorn",
+    "sindresorhus",
+    "typescript-eslint",
+    "typescript-eslint-parser",
+    "perfectionist",
+    "eslint stylistic",
+    "modern airbnb"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -53,7 +73,7 @@
     "access": "public",
     "provenance": false,
     "registry": "https://registry.npmjs.org/",
-    "tag": "next"
+    "tag": "latest"
   },
   "scripts": {
     "dev": "bunx @eslint/config-inspector",

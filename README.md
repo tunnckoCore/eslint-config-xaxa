@@ -428,7 +428,7 @@ Licensed under the [MIT License](https://opensource.org/licenses/MIT)
 
 <!-- prettier-ignore-start -->
 
-[npm-version-src]: https://img.shields.io/npm/v/eslint-config-xaxa/next?style=flat&logo=npm
+[npm-version-src]: https://img.shields.io/npm/v/eslint-config-xaxa?style=flat&logo=npm
 [npm-version-href]: https://npmjs.com/package/eslint-config-xaxa
 [npm-downloads-src]: https://img.shields.io/npm/dm/eslint-config-xaxa?style=flat&logo=npm
 [npm-downloads-href]: https://npmjs.com/package/eslint-config-xaxa
