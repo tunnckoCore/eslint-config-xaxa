@@ -14,20 +14,10 @@ const sortImportsPlugin = {
 
 /** @type { PrettierConfig | SortImportsConfig } */
 const config = {
-  endOfLine: 'lf',
-  printWidth: 100,
-  tabWidth: 2,
-  useTabs: false,
-  semi: true,
-  proseWrap: 'always',
   arrowParens: 'always',
-  singleQuote: true,
-  trailingComma: 'all',
-  bracketSpacing: true,
   bracketSameLine: false,
-
-  // !NOTE: do not use root level `plugins`, put it on overrides
-
+  bracketSpacing: true,
+  endOfLine: 'lf',
   overrides: [
     {
       files: ['**/.all-contributorsrc'],
@@ -96,16 +86,26 @@ const config = {
     {
       files: ['**/*.sol'],
       options: {
-        plugins: ['prettier-plugin-solidity'],
+        bracketSpacing: false,
         parser: 'solidity-parse',
+        plugins: ['prettier-plugin-solidity'],
         printWidth: 100,
+        singleQuote: false,
         tabWidth: 4,
         useTabs: false,
-        singleQuote: false,
-        bracketSpacing: false,
       },
     },
   ],
+  printWidth: 100,
+  proseWrap: 'always',
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+
+  // !NOTE: do not use root level `plugins`, put it on overrides
+
+  useTabs: false,
 };
 
 export default config;

@@ -1,17 +1,23 @@
-name: Linting
+name: ci
 
 on: [push, pull_request]
 
 jobs:
-  lint:
-    name: Trying linting
-    runs-on: ubuntu-latest
+  test:
+    name: Test with Bun latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
         with:
           bun-version: 'latest'
 
       - run: bun install
-
-      - run: bun start
+      - run: bun test:ci
+      # - name: Code coverage with Codecov
+      #   uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # v5
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}

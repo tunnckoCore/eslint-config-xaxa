@@ -1,0 +1,55 @@
+---
+interface Props {
+  active?: boolean;
+  className?: string;
+  class?: string;
+  name?: string;
+  tel?: number;
+  validate?: boolean;
+  onClick?: () => void;
+  onSubmit?: () => void;
+}
+
+const {
+ active, class: className, name, onClick, onSubmit, tel, validate,
+} = Astro.props;
+
+return Astro.redirect('/path/here');
+---
+
+<!-- <button name="John" type="button" class=" py-2 rounded     bg-blue-500   text-base text-white px-4" >click me</button> -->
+<button class="text-base text-white px-4 py-2 rounded bg-blue-500" name="John" type="button">click me</button>
+<div class={className}>
+  {
+    active && (
+      <p>
+        Hello {name}!
+        {tel && (
+          <span>
+            Your phone number is:
+            {tel}
+          </span>
+        )}
+      </p>
+    )
+  }
+  {validate && <p>Validation passed!</p>}
+  <button type="button">Click me!</button>
+  <button type="submit">Submit</button>
+</div>
+
+<script define:vars={{ onClick, onSubmit }}>
+  const { log: logger } = console;
+
+  // Client-side event handlers
+  document.querySelector('button[type="button"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    onClick?.();
+    logger('sasa');
+  });
+
+  document.querySelector('button[type="submit"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    onSubmit?.();
+  });
+</script>

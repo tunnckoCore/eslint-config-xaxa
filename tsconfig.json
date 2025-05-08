@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "./comapt-typescript.json"
+  ],
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.tsx",
+    "**/*.astro",
+    "**/*.js"
+    // "**/src/foo.md/*.js",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/dist/**"
+  ]
+}
