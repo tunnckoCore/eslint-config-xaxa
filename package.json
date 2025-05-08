@@ -133,7 +133,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "recommended-bump": "^3.0.1",
-    "tsdown": "0.10.2",
+    "tsdown": "0.11.1",
     "typescript": "^5.8.3",
     "unocss": "66.1.0"
   }
