@@ -18,21 +18,33 @@
   "rangeStrategy": "pin",
   "lockFileMaintenance": {
     "enabled": true,
-    "extends": ["schedule:daily"]
+    "extends": [
+      "schedule:daily"
+    ]
   },
   "packageRules": [
     {
-      "matchDepTypes": ["action"],
+      "matchDepTypes": [
+        "action"
+      ],
       "semanticCommitType": "ci",
       "semanticCommitScope": "action",
       "rangeStrategy": "pin"
     },
     {
-      "matchPackageNames": ["*"],
+      "matchPackageNames": [
+        "*"
+      ],
       "rangeStrategy": "pin"
     },
     {
-      "matchDepTypes": ["dependencies", "peerDependencies", "devDependencies", "dev-dependencies", "dev"],
+      "matchDepTypes": [
+        "dependencies",
+        "peerDependencies",
+        "devDependencies",
+        "dev-dependencies",
+        "dev"
+      ],
       "rangeStrategy": "pin"
     }
   ],
@@ -40,8 +52,12 @@
     {
       "customType": "regex",
       "description": "Update semantic-release version used by npx",
-      "fileMatch": ["^\\.github/workflows/release\\.yml$"],
-      "matchStrings": ["\\srun: npx semantic-release@(?<currentValue>.*?)\\s"],
+      "managerFilePatterns": [
+        "/^\\.github/workflows/release\\.yml$/"
+      ],
+      "matchStrings": [
+        "\\srun: npx semantic-release@(?<currentValue>.*?)\\s"
+      ],
       "datasourceTemplate": "npm",
       "depNameTemplate": "semantic-release"
     }
