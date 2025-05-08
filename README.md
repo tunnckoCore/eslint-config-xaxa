@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://npmjs.com/package/eslint-config-xaxa">
-    <img src="https://img.shields.io/npm/v/eslint-config-xaxa/next?style=flat&logo=npm" alt="npm version">
+    <img src="https://img.shields.io/npm/v/eslint-config-xaxa?style=flat&logo=npm" alt="npm version">
   </a>
   <a href="https://github.com/tunnckocore/eslint-config-xaxa/actions?query=workflow%3Aci">
     <img src="https://img.shields.io/github/actions/workflow/status/tunnckoCore/eslint-config-xaxa/ci.yml?style=flat&logo=github" alt="github actions">
