@@ -89,11 +89,11 @@
   },
   "peerDependencies": {
     "eslint": "9.29.0",
-    "prettier": "3.5.3",
+    "prettier": "3.6.0",
     "typescript": "5.8.3"
   },
   "dependencies": {
-    "@antfu/eslint-config": "4.15.0",
+    "@antfu/eslint-config": "4.16.1",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
     "@eslint-react/eslint-plugin": "1.52.2",
     "@eslint/js": "9.29.0",
@@ -126,7 +126,7 @@
     "@unocss/preset-wind4": "66.2.3",
     "eslint": "9.29.0",
     "jiti": "2.4.2",
-    "prettier": "3.5.3",
+    "prettier": "3.6.0",
     "typescript": "5.8.3",
     "unocss": "66.2.3"
   }
