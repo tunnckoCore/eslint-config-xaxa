@@ -1102,7 +1102,7 @@ export const airbnbGeneralStyling: TypedFlatConfigItem = {
 
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
-    'style/func-call-spacing': ['error', 'never'],
+    'style/function-call-spacing': ['error', 'never'],
 
     // require line breaks inside function parentheses if there are line breaks between parameters
     // https://eslint.org/docs/rules/function-paren-newline
