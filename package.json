@@ -88,19 +88,19 @@
     "wgw-publish": "bun ./scripts/publish.ts"
   },
   "peerDependencies": {
-    "eslint": "9.34.0",
+    "eslint": "9.35.0",
     "prettier": "3.6.2",
     "typescript": "5.8.3"
   },
   "dependencies": {
-    "@antfu/eslint-config": "5.2.1",
+    "@antfu/eslint-config": "5.2.2",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@eslint-react/eslint-plugin": "1.52.6",
-    "@eslint/js": "9.34.0",
+    "@eslint-react/eslint-plugin": "1.53.0",
+    "@eslint/js": "9.35.0",
     "@next/eslint-plugin-next": "15.5.2",
-    "@stylistic/eslint-plugin": "5.2.3",
-    "@typescript-eslint/parser": "8.41.0",
-    "@unocss/eslint-plugin": "66.4.2",
+    "@stylistic/eslint-plugin": "5.3.1",
+    "@typescript-eslint/parser": "8.42.0",
+    "@unocss/eslint-plugin": "66.5.0",
     "astro-eslint-parser": "1.2.2",
     "confusing-browser-globals": "1.0.11",
     "eslint-config-flat-gitignore": "2.1.0",
@@ -120,14 +120,14 @@
     "globals": "16.3.0",
     "local-pkg": "1.1.2",
     "prettier-plugin-astro": "0.14.1",
-    "typescript-eslint": "8.41.0"
+    "typescript-eslint": "8.42.0"
   },
   "devDependencies": {
-    "@unocss/preset-wind4": "66.4.2",
-    "eslint": "9.34.0",
+    "@unocss/preset-wind4": "66.5.0",
+    "eslint": "9.35.0",
     "jiti": "2.5.1",
     "prettier": "3.6.2",
     "typescript": "5.8.3",
-    "unocss": "66.4.2"
+    "unocss": "66.5.0"
   }
 }
