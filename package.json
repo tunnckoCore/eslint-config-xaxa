@@ -95,7 +95,7 @@
   "dependencies": {
     "@antfu/eslint-config": "5.4.1",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@eslint-react/eslint-plugin": "2.0.0",
+    "@eslint-react/eslint-plugin": "2.0.1",
     "@eslint/js": "9.36.0",
     "@next/eslint-plugin-next": "15.5.4",
     "@stylistic/eslint-plugin": "5.4.0",
