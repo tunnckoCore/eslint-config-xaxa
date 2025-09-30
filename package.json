@@ -95,11 +95,11 @@
   "dependencies": {
     "@antfu/eslint-config": "5.4.1",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@eslint-react/eslint-plugin": "2.0.1",
+    "@eslint-react/eslint-plugin": "2.0.3",
     "@eslint/js": "9.36.0",
     "@next/eslint-plugin-next": "15.5.4",
     "@stylistic/eslint-plugin": "5.4.0",
-    "@typescript-eslint/parser": "8.44.1",
+    "@typescript-eslint/parser": "8.45.0",
     "@unocss/eslint-plugin": "66.5.2",
     "astro-eslint-parser": "1.2.2",
     "confusing-browser-globals": "1.0.11",
@@ -120,7 +120,7 @@
     "globals": "16.4.0",
     "local-pkg": "1.1.2",
     "prettier-plugin-astro": "0.14.1",
-    "typescript-eslint": "8.44.1"
+    "typescript-eslint": "8.45.0"
   },
   "devDependencies": {
     "@unocss/preset-wind4": "66.5.2",
