@@ -116,7 +116,7 @@
     "eslint-plugin-react-hooks": "7.0.0",
     "eslint-plugin-react-refresh": "0.4.24",
     "eslint-plugin-tailwindcss": "3.18.2",
-    "eslint-plugin-unused-imports": "4.2.0",
+    "eslint-plugin-unused-imports": "4.3.0",
     "globals": "16.4.0",
     "local-pkg": "1.1.2",
     "prettier-plugin-astro": "0.14.1",
