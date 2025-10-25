@@ -113,7 +113,7 @@
     "eslint-plugin-no-use-extend-native": "0.7.2",
     "eslint-plugin-perfectionist": "4.15.1",
     "eslint-plugin-promise": "7.2.1",
-    "eslint-plugin-react-hooks": "7.0.0",
+    "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-refresh": "0.4.24",
     "eslint-plugin-tailwindcss": "3.18.2",
     "eslint-plugin-unused-imports": "4.3.0",
