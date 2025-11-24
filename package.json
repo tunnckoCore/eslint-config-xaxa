@@ -95,12 +95,12 @@
   "dependencies": {
     "@antfu/eslint-config": "6.2.0",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@eslint-react/eslint-plugin": "2.3.5",
+    "@eslint-react/eslint-plugin": "2.3.7",
     "@eslint/js": "9.39.1",
-    "@next/eslint-plugin-next": "16.0.3",
-    "@stylistic/eslint-plugin": "5.5.0",
-    "@typescript-eslint/parser": "8.46.4",
-    "@unocss/eslint-plugin": "66.5.6",
+    "@next/eslint-plugin-next": "16.0.4",
+    "@stylistic/eslint-plugin": "5.6.1",
+    "@typescript-eslint/parser": "8.48.0",
+    "@unocss/eslint-plugin": "66.5.9",
     "astro-eslint-parser": "1.2.2",
     "confusing-browser-globals": "1.0.11",
     "eslint-config-flat-gitignore": "2.1.0",
@@ -120,14 +120,14 @@
     "globals": "16.5.0",
     "local-pkg": "1.1.2",
     "prettier-plugin-astro": "0.14.1",
-    "typescript-eslint": "8.46.4"
+    "typescript-eslint": "8.48.0"
   },
   "devDependencies": {
-    "@unocss/preset-wind4": "66.5.6",
+    "@unocss/preset-wind4": "66.5.9",
     "eslint": "9.39.1",
     "jiti": "2.6.1",
     "prettier": "3.6.2",
     "typescript": "5.8.3",
-    "unocss": "66.5.6"
+    "unocss": "66.5.9"
   }
 }
