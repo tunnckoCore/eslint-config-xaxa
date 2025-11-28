@@ -89,15 +89,15 @@
   },
   "peerDependencies": {
     "eslint": "9.39.1",
-    "prettier": "3.6.2",
+    "prettier": "3.7.1",
     "typescript": "5.8.3"
   },
   "dependencies": {
     "@antfu/eslint-config": "6.2.0",
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@eslint-react/eslint-plugin": "2.3.7",
+    "@eslint-react/eslint-plugin": "2.3.9",
     "@eslint/js": "9.39.1",
-    "@next/eslint-plugin-next": "16.0.4",
+    "@next/eslint-plugin-next": "16.0.5",
     "@stylistic/eslint-plugin": "5.6.1",
     "@typescript-eslint/parser": "8.48.0",
     "@unocss/eslint-plugin": "66.5.9",
@@ -126,7 +126,7 @@
     "@unocss/preset-wind4": "66.5.9",
     "eslint": "9.39.1",
     "jiti": "2.6.1",
-    "prettier": "3.6.2",
+    "prettier": "3.7.1",
     "typescript": "5.8.3",
     "unocss": "66.5.9"
   }
