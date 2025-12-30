@@ -100,7 +100,7 @@
     "@next/eslint-plugin-next": "16.1.1",
     "@stylistic/eslint-plugin": "5.6.1",
     "@typescript-eslint/parser": "8.50.1",
-    "@unocss/eslint-plugin": "66.5.10",
+    "@unocss/eslint-plugin": "66.5.11",
     "astro-eslint-parser": "1.2.2",
     "confusing-browser-globals": "1.0.11",
     "eslint-config-flat-gitignore": "2.1.0",
@@ -123,11 +123,11 @@
     "typescript-eslint": "8.50.1"
   },
   "devDependencies": {
-    "@unocss/preset-wind4": "66.5.10",
+    "@unocss/preset-wind4": "66.5.11",
     "eslint": "9.39.2",
     "jiti": "2.6.1",
     "prettier": "3.7.4",
     "typescript": "5.8.3",
-    "unocss": "66.5.10"
+    "unocss": "66.5.11"
   }
 }
