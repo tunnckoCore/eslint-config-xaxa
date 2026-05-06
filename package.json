@@ -86,7 +86,7 @@
     "test:ci": "bun run build && bun run lint",
     "wgw-version": "bun ./scripts/version.ts",
     "wgw-publish": "bun ./scripts/publish.ts",
-    "prepack": "bun run build"
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "eslint": "^10.3.0",
