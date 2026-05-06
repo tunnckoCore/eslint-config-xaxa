@@ -29,7 +29,7 @@ export async function perfectionist(options?: TypedFlatConfigItem['rules']): Pro
         //   'object',
         //   'unknown',
         // ],
-        newlinesBetween: 'always',
+        newlinesBetween: 1,
         order: 'asc',
         type: 'alphabetical',
       }],
