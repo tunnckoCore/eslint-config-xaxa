@@ -618,7 +618,7 @@ export const airbnbErrors: TypedFlatConfigItem = {
     // https://eslint.org/docs/rules/no-extra-parens
     'style/no-extra-parens': ['error', 'all', {
       conditionalAssign: true,
-      enforceForArrowConditionals: false,
+      ignoredNodes: ['ArrowFunctionExpression[body.type=ConditionalExpression]'],
       ignoreJSX: 'all', // delegate to eslint-plugin-react
       nestedBinaryExpressions: false,
       returnAssign: false,
@@ -1382,7 +1382,7 @@ export const airbnbGeneralStyling: TypedFlatConfigItem = {
 
     // specify whether double or single quotes should be used
     'style/quotes': ['error', 'single', {
-      allowTemplateLiterals: true,
+      allowTemplateLiterals: 'avoidEscape',
       avoidEscape: true,
     }],
 
