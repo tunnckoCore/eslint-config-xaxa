@@ -4,7 +4,8 @@
     "./compat-typescript.json"
   ],
   "compilerOptions": {
-    "exactOptionalPropertyTypes": false
+    "exactOptionalPropertyTypes": false,
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "src/**/*.ts",
