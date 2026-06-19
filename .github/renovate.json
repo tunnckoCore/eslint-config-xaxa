@@ -13,7 +13,7 @@
     "group:allDigest",
     "helpers:disableTypesNodeMajor",
     "security:openssf-scorecard",
-    "npm:unpublishSafe"
+    "security:minimumReleaseAgeNpm"
   ],
   "rangeStrategy": "pin",
   "lockFileMaintenance": {
